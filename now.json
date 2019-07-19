@@ -1,0 +1,16 @@
+{
+    "version": 2,
+  
+    "name": "Rethink Back",
+    "builds": [
+        { "src": "src/index.js", "use": "@now/node-server" }
+    ],
+    "routes": [
+        { "src": "/.*", "dest": "src/index.js" }
+    ],
+     "env": {
+        "PRISMA_ENDPOINT":"@rethink_prisma_endpoint",
+        "PRISMA_SECRET":"@rethink_prisma_secret",
+        "FRONTEND_URL":"@rethink_frontend_url"
+    }
+}

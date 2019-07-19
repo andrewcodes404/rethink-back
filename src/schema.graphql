@@ -1,0 +1,9 @@
+# import * from './schema_prep.graphql'
+
+type Mutation {
+  createUser(name: String): User!
+}
+
+type Query {
+  users: [User]!
+}
