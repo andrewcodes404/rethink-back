@@ -1,9 +1,100 @@
 # import * from './schema_prep.graphql'
 
+type SuccessMessage {
+    message: String
+}
+
 type Mutation {
-  createUser(name: String): User!
+    createUser(name: String): User!
+    registerUser(email: String!, password: String!, name: String!): User!
+    login(email: String!, password: String!): User!
+    logout: SuccessMessage
+    createAdvCom(
+        index: Int
+        headshot: String
+        name: String
+        jobTitle: String
+        company: String
+    ): AdvCom!
+
+    updateAdvCom(
+        id: ID!
+        index: Int
+        headshot: String
+        name: String
+        jobTitle: String
+        company: String
+    ): AdvCom
+
+    deleteAdvCom(id: ID!): AdvCom
+
+    createSponsor(
+        name: String!
+        ranking: String!
+        index: Int!
+        logo: String!
+        description: String!
+        website: String
+        instagram: String
+        facebook: String
+        twitter: String
+        frontpage: Boolean
+    ): Sponsor!
+
+
+    updateSponsor(
+        id: ID!
+        name: String!
+        ranking: String!
+        index: Int!
+        logo: String!
+        description: String!
+        website: String
+        instagram: String
+        facebook: String
+        twitter: String
+        frontpage: Boolean
+    ): Sponsor
+
+    deleteSponsor(id: ID!): Sponsor
+
+
+    createPartner(
+        name: String!
+        ranking: String!
+        index: Int!
+        logo: String!
+        description: String!
+        website: String
+        instagram: String
+        facebook: String
+        twitter: String
+        frontpage: Boolean
+    ): Sponsor!
+
+
+    updatePartner(
+        id: ID!
+        name: String!
+        ranking: String!
+        index: Int!
+        logo: String!
+        description: String!
+        website: String
+        instagram: String
+        facebook: String
+        twitter: String
+        frontpage: Boolean
+    ): Sponsor
+
+    deletePartner(id: ID!): Sponsor
 }
 
 type Query {
-  users: [User]!
+    users: [User]!
+    user: User
+    advComs(orderBy: AdvComOrderByInput): [AdvCom]!
+    advCom(where: AdvComWhereUniqueInput!): AdvCom
+    sponsors(where: SponsorWhereInput, orderBy: SponsorOrderByInput): [Sponsor]!
+    partners(where: PartnerWhereInput, orderBy: PartnerOrderByInput): [Partner]!
 }

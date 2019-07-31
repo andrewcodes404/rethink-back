@@ -1,4 +1,59 @@
+enum Permission {
+  ADMIN
+  USER
+  ITEMCREATE
+  ITEMUPDATE
+  ITEMDELETE
+  PERMISSIONUPDATE
+}
+
 type User {
   id: ID! @id
   name: String!
+  email: String! @unique
+  password: String!
+  resetToken: String
+  resetTokenExpiry: Float
+  permissions: [Permission] @scalarList(strategy:RELATION)
 }
+
+type AdvCom {
+  id: ID! @id
+  index: Int!
+  headshot: String!
+  name: String!
+  jobTitle: String!
+  company: String!
+}
+
+
+type Sponsor {
+  id: ID! @id
+  name: String!
+  ranking: String!
+  index: Int!
+  logo: String!
+  description: String!
+  website: String
+  instagram: String
+  facebook: String
+  twitter: String
+  frontpage: Boolean
+}
+
+type Partner {
+  id: ID! @id
+  name: String!
+  ranking: String!
+  index: Int!
+  logo: String!
+  description: String!
+  website: String
+  instagram: String
+  facebook: String
+  twitter: String
+  frontpage: Boolean
+}
+
+
+
