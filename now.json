@@ -11,6 +11,8 @@
      "env": {
         "PRISMA_ENDPOINT":"@rethink_prisma_endpoint",
         "PRISMA_SECRET":"@rethink_prisma_secret",
-        "FRONTEND_URL":"@rethink_frontend_url"
+        "FRONTEND_URL":"@rethink_frontend_url",
+        "FRONTEND_URL2":"@rethink_frontend_url2",
+        "APP_SECRET_FOR_JWT":"@rethink_app_secret_for_jwt"
     }
 }
