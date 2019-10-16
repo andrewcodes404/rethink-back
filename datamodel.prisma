@@ -56,4 +56,31 @@ type Partner {
 }
 
 
+type HostSpeaker {
+   id: ID! @id
+   name: String!
+   title: String!
+   company: String!
+   bio: String!
+   linkedIn: String!
+   insta: String!
+   facebook: String!
+   twitter: String!
+   website: String!
+  
+}
 
+
+type Session {
+  id: ID! @id
+  title: String!
+  theme: String!
+  start: String!
+  end: String!
+  host: String
+  speakers: [String!] @scalarList(strategy: RELATION)
+  overview: String
+  learnings: String
+  supporters: [String!] @scalarList(strategy: RELATION)
+  sponsors: [String!] @scalarList(strategy: RELATION)
+}

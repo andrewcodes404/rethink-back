@@ -34,7 +34,7 @@ const Mutations = {
         return user
     },
 
-    async login(parent, { email, password }, ctx, npm) {
+    async login(parent, { email, password }, ctx, info) {
         // 1. check if there is a user with that email
         const user = await ctx.db.query.user({ where: { email } })
         if (!user) {
@@ -176,6 +176,22 @@ const Mutations = {
     async deletePartner(parent, args, ctx, info) {
         const where = { id: args.id }
         return ctx.db.mutation.deletePartner({ where }, info)
+    },
+
+    async createSession(parent, args, ctx, info) {
+        const Session = await ctx.db.mutation.createSession(
+            {
+                data: {
+                    ...args,
+                    speakers: { set: args.speakers },
+                    supporters: { set: args.supporters },
+                    sponsors: { set: args.sponsors },
+                },
+            },
+            info
+        )
+
+        return Session
     },
 }
 

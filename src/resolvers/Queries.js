@@ -17,5 +17,8 @@ const Query = {
     advComs: forwardTo('db'),
     sponsors: forwardTo('db'),
     partners: forwardTo('db'),
+    partner: forwardTo('db'),
+    sessions: forwardTo('db'),
+    session: forwardTo('db'),
 }
 module.exports = Query

@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken')
 const createServer = require('./createServer')
 
 //grab the db instance
-const db = require('./db')
+// const db = require('./db')
 
 //run the server fn
 const server = createServer()

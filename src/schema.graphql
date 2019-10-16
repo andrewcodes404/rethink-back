@@ -41,7 +41,6 @@ type Mutation {
         frontpage: Boolean
     ): Sponsor!
 
-
     updateSponsor(
         id: ID!
         name: String!
@@ -58,7 +57,6 @@ type Mutation {
 
     deleteSponsor(id: ID!): Sponsor
 
-
     createPartner(
         name: String!
         ranking: String!
@@ -71,7 +69,6 @@ type Mutation {
         twitter: String
         frontpage: Boolean
     ): Sponsor!
-
 
     updatePartner(
         id: ID!
@@ -88,6 +85,19 @@ type Mutation {
     ): Sponsor
 
     deletePartner(id: ID!): Sponsor
+
+    createSession(
+        title: String!
+        theme: String!
+        start: String!
+        end: String!
+        host: String
+        speakers: [String!] 
+        overview: String
+        learnings: String
+        supporters: [String] 
+        sponsors: [String] 
+    ): Session!
 }
 
 type Query {
@@ -97,4 +107,8 @@ type Query {
     advCom(where: AdvComWhereUniqueInput!): AdvCom
     sponsors(where: SponsorWhereInput, orderBy: SponsorOrderByInput): [Sponsor]!
     partners(where: PartnerWhereInput, orderBy: PartnerOrderByInput): [Partner]!
+    partner(where: PartnerWhereUniqueInput!): Partner
+    # sessions(where: SesionWhereInput, orderBy: SesionOrderByInput): [Session]!
+    sessions: [Session]!
+    session(where: SessionWhereUniqueInput!): Session
 }

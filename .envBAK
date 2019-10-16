@@ -1,0 +1,6 @@
+PRISMA_ENDPOINT=http://localhost:4467
+PRISMA_SECRET=changedItAgainArghhhhhhh21e87619
+FRONTEND_URL=http://localhost:3000
+FRONTEND_URL2=http://localhost:3001
+PORT=4067
+APP_SECRET_FOR_JWT='myAppSecretForJWT38e29h2changedItToWork'
