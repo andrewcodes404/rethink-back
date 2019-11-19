@@ -38,6 +38,7 @@ type Mutation {
         instagram: String
         facebook: String
         twitter: String
+        linkedIn: String
         frontpage: Boolean
     ): Sponsor!
 
@@ -52,6 +53,7 @@ type Mutation {
         instagram: String
         facebook: String
         twitter: String
+        linkedIn: String
         frontpage: Boolean
     ): Sponsor
 
@@ -67,6 +69,7 @@ type Mutation {
         instagram: String
         facebook: String
         twitter: String
+        linkedIn: String
         frontpage: Boolean
     ): Sponsor!
 
@@ -81,6 +84,7 @@ type Mutation {
         instagram: String
         facebook: String
         twitter: String
+        linkedIn: String
         frontpage: Boolean
     ): Sponsor
 
@@ -92,12 +96,41 @@ type Mutation {
         start: String!
         end: String!
         host: String
-        speakers: [String!] 
+        speakers: [String!]
         overview: String
         learnings: String
-        supporters: [String] 
-        sponsors: [String] 
+        supporters: [String]
+        sponsors: [String]
     ): Session!
+
+    createHostSpeaker(
+        headshot: String
+        name: String
+        title: String
+        company: String
+        bio: String
+        linkedIn: String
+        insta: String
+        facebook: String
+        twitter: String
+        website: String
+    ): HostSpeaker!
+
+    updateHostSpeaker(
+        id: ID!
+        headshot: String
+        name: String
+        title: String
+        company: String
+        bio: String
+        linkedIn: String
+        insta: String
+        facebook: String
+        twitter: String
+        website: String
+    ): HostSpeaker!
+
+    deleteHostSpeaker(id: ID!): HostSpeaker!
 }
 
 type Query {
@@ -106,9 +139,13 @@ type Query {
     advComs(orderBy: AdvComOrderByInput): [AdvCom]!
     advCom(where: AdvComWhereUniqueInput!): AdvCom
     sponsors(where: SponsorWhereInput, orderBy: SponsorOrderByInput): [Sponsor]!
+    sponsor(where: SponsorWhereUniqueInput!): Sponsor
     partners(where: PartnerWhereInput, orderBy: PartnerOrderByInput): [Partner]!
     partner(where: PartnerWhereUniqueInput!): Partner
     # sessions(where: SesionWhereInput, orderBy: SesionOrderByInput): [Session]!
-    sessions: [Session]!
+    sessions(orderBy: SessionOrderByInput!): [Session]!
     session(where: SessionWhereUniqueInput!): Session
+
+    hostSpeakers(where: HostSpeakerWhereInput, orderBy: HostSpeakerOrderByInput): [HostSpeaker]!
+    hostSpeaker(where: HostSpeakerWhereUniqueInput!): HostSpeaker
 }

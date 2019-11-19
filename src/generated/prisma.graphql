@@ -1,5 +1,5 @@
 # source: http://localhost:4467
-# timestamp: Tue Oct 15 2019 13:49:50 GMT+0100 (British Summer Time)
+# timestamp: Tue Nov 19 2019 14:30:42 GMT+0000 (Greenwich Mean Time)
 
 type AdvCom implements Node {
   id: ID!
@@ -383,6 +383,7 @@ type BatchPayload {
 
 type HostSpeaker implements Node {
   id: ID!
+  headshot: String!
   name: String!
   title: String!
   company: String!
@@ -406,6 +407,7 @@ type HostSpeakerConnection {
 
 input HostSpeakerCreateInput {
   id: ID
+  headshot: String!
   name: String!
   title: String!
   company: String!
@@ -429,6 +431,8 @@ type HostSpeakerEdge {
 enum HostSpeakerOrderByInput {
   id_ASC
   id_DESC
+  headshot_ASC
+  headshot_DESC
   name_ASC
   name_DESC
   title_ASC
@@ -451,6 +455,7 @@ enum HostSpeakerOrderByInput {
 
 type HostSpeakerPreviousValues {
   id: ID!
+  headshot: String!
   name: String!
   title: String!
   company: String!
@@ -500,6 +505,7 @@ input HostSpeakerSubscriptionWhereInput {
 }
 
 input HostSpeakerUpdateInput {
+  headshot: String
   name: String
   title: String
   company: String
@@ -512,6 +518,7 @@ input HostSpeakerUpdateInput {
 }
 
 input HostSpeakerUpdateManyMutationInput {
+  headshot: String
   name: String
   title: String
   company: String
@@ -572,6 +579,46 @@ input HostSpeakerWhereInput {
 
   """All values not ending with the given string."""
   id_not_ends_with: ID
+  headshot: String
+
+  """All values that are not equal to given value."""
+  headshot_not: String
+
+  """All values that are contained in given list."""
+  headshot_in: [String!]
+
+  """All values that are not contained in given list."""
+  headshot_not_in: [String!]
+
+  """All values less than the given value."""
+  headshot_lt: String
+
+  """All values less than or equal the given value."""
+  headshot_lte: String
+
+  """All values greater than the given value."""
+  headshot_gt: String
+
+  """All values greater than or equal the given value."""
+  headshot_gte: String
+
+  """All values containing the given string."""
+  headshot_contains: String
+
+  """All values not containing the given string."""
+  headshot_not_contains: String
+
+  """All values starting with the given string."""
+  headshot_starts_with: String
+
+  """All values not starting with the given string."""
+  headshot_not_starts_with: String
+
+  """All values ending with the given string."""
+  headshot_ends_with: String
+
+  """All values not ending with the given string."""
+  headshot_not_ends_with: String
   name: String
 
   """All values that are not equal to given value."""
@@ -1021,6 +1068,7 @@ type Partner implements Node {
   instagram: String
   facebook: String
   twitter: String
+  linkedIn: String
   frontpage: Boolean
 }
 
@@ -1045,6 +1093,7 @@ input PartnerCreateInput {
   instagram: String
   facebook: String
   twitter: String
+  linkedIn: String
   frontpage: Boolean
 }
 
@@ -1078,6 +1127,8 @@ enum PartnerOrderByInput {
   facebook_DESC
   twitter_ASC
   twitter_DESC
+  linkedIn_ASC
+  linkedIn_DESC
   frontpage_ASC
   frontpage_DESC
 }
@@ -1093,6 +1144,7 @@ type PartnerPreviousValues {
   instagram: String
   facebook: String
   twitter: String
+  linkedIn: String
   frontpage: Boolean
 }
 
@@ -1143,6 +1195,7 @@ input PartnerUpdateInput {
   instagram: String
   facebook: String
   twitter: String
+  linkedIn: String
   frontpage: Boolean
 }
 
@@ -1156,6 +1209,7 @@ input PartnerUpdateManyMutationInput {
   instagram: String
   facebook: String
   twitter: String
+  linkedIn: String
   frontpage: Boolean
 }
 
@@ -1550,6 +1604,46 @@ input PartnerWhereInput {
 
   """All values not ending with the given string."""
   twitter_not_ends_with: String
+  linkedIn: String
+
+  """All values that are not equal to given value."""
+  linkedIn_not: String
+
+  """All values that are contained in given list."""
+  linkedIn_in: [String!]
+
+  """All values that are not contained in given list."""
+  linkedIn_not_in: [String!]
+
+  """All values less than the given value."""
+  linkedIn_lt: String
+
+  """All values less than or equal the given value."""
+  linkedIn_lte: String
+
+  """All values greater than the given value."""
+  linkedIn_gt: String
+
+  """All values greater than or equal the given value."""
+  linkedIn_gte: String
+
+  """All values containing the given string."""
+  linkedIn_contains: String
+
+  """All values not containing the given string."""
+  linkedIn_not_contains: String
+
+  """All values starting with the given string."""
+  linkedIn_starts_with: String
+
+  """All values not starting with the given string."""
+  linkedIn_not_starts_with: String
+
+  """All values ending with the given string."""
+  linkedIn_ends_with: String
+
+  """All values not ending with the given string."""
+  linkedIn_not_ends_with: String
   frontpage: Boolean
 
   """All values that are not equal to given value."""
@@ -2109,6 +2203,7 @@ type Sponsor implements Node {
   instagram: String
   facebook: String
   twitter: String
+  linkedIn: String
   frontpage: Boolean
 }
 
@@ -2133,6 +2228,7 @@ input SponsorCreateInput {
   instagram: String
   facebook: String
   twitter: String
+  linkedIn: String
   frontpage: Boolean
 }
 
@@ -2166,6 +2262,8 @@ enum SponsorOrderByInput {
   facebook_DESC
   twitter_ASC
   twitter_DESC
+  linkedIn_ASC
+  linkedIn_DESC
   frontpage_ASC
   frontpage_DESC
 }
@@ -2181,6 +2279,7 @@ type SponsorPreviousValues {
   instagram: String
   facebook: String
   twitter: String
+  linkedIn: String
   frontpage: Boolean
 }
 
@@ -2231,6 +2330,7 @@ input SponsorUpdateInput {
   instagram: String
   facebook: String
   twitter: String
+  linkedIn: String
   frontpage: Boolean
 }
 
@@ -2244,6 +2344,7 @@ input SponsorUpdateManyMutationInput {
   instagram: String
   facebook: String
   twitter: String
+  linkedIn: String
   frontpage: Boolean
 }
 
@@ -2638,6 +2739,46 @@ input SponsorWhereInput {
 
   """All values not ending with the given string."""
   twitter_not_ends_with: String
+  linkedIn: String
+
+  """All values that are not equal to given value."""
+  linkedIn_not: String
+
+  """All values that are contained in given list."""
+  linkedIn_in: [String!]
+
+  """All values that are not contained in given list."""
+  linkedIn_not_in: [String!]
+
+  """All values less than the given value."""
+  linkedIn_lt: String
+
+  """All values less than or equal the given value."""
+  linkedIn_lte: String
+
+  """All values greater than the given value."""
+  linkedIn_gt: String
+
+  """All values greater than or equal the given value."""
+  linkedIn_gte: String
+
+  """All values containing the given string."""
+  linkedIn_contains: String
+
+  """All values not containing the given string."""
+  linkedIn_not_contains: String
+
+  """All values starting with the given string."""
+  linkedIn_starts_with: String
+
+  """All values not starting with the given string."""
+  linkedIn_not_starts_with: String
+
+  """All values ending with the given string."""
+  linkedIn_ends_with: String
+
+  """All values not ending with the given string."""
+  linkedIn_not_ends_with: String
   frontpage: Boolean
 
   """All values that are not equal to given value."""

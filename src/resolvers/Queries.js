@@ -16,9 +16,12 @@ const Query = {
 
     advComs: forwardTo('db'),
     sponsors: forwardTo('db'),
+    sponsor: forwardTo('db'),
     partners: forwardTo('db'),
     partner: forwardTo('db'),
     sessions: forwardTo('db'),
     session: forwardTo('db'),
+    hostSpeakers: forwardTo('db'),
+    hostSpeaker: forwardTo('db'),
 }
 module.exports = Query

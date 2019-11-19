@@ -38,6 +38,7 @@ type Sponsor {
   instagram: String
   facebook: String
   twitter: String
+  linkedIn: String
   frontpage: Boolean
 }
 
@@ -52,12 +53,14 @@ type Partner {
   instagram: String
   facebook: String
   twitter: String
+  linkedIn: String
   frontpage: Boolean
 }
 
 
 type HostSpeaker {
    id: ID! @id
+   headshot: String!
    name: String!
    title: String!
    company: String!
