@@ -95,8 +95,24 @@ type Mutation {
         theme: String!
         start: String!
         end: String!
+        day: String!
         host: String
         speakers: [String!]
+        overview: String
+        learnings: String
+        supporters: [String]
+        sponsors: [String]
+    ): Session!
+
+    updateSession(
+        id: ID!
+        title: String!
+        theme: String!
+        start: String!
+        end: String!
+        day: String!
+        host: String
+        speakers: [String]
         overview: String
         learnings: String
         supporters: [String]
@@ -143,7 +159,7 @@ type Query {
     partners(where: PartnerWhereInput, orderBy: PartnerOrderByInput): [Partner]!
     partner(where: PartnerWhereUniqueInput!): Partner
     # sessions(where: SesionWhereInput, orderBy: SesionOrderByInput): [Session]!
-    sessions(orderBy: SessionOrderByInput!): [Session]!
+    sessions(where: SessionWhereInput, orderBy: SessionOrderByInput!): [Session]!
     session(where: SessionWhereUniqueInput!): Session
 
     hostSpeakers(where: HostSpeakerWhereInput, orderBy: HostSpeakerOrderByInput): [HostSpeaker]!

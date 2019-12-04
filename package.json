@@ -9,6 +9,7 @@
     "deploy-dev": "prisma deploy --env-file .env && npm run write-schema",
     "deploy-dev-force": "prisma deploy --force --env-file .env && npm run write-schema",
     "deploy-prod": "prisma deploy --env-file .env.prod && npm run write-schema",
+    "deploy-prod-force": "prisma deploy --force --env-file .env.prod && npm run write-schema",
     "write-schema": "node src/writeSchema.js",
     "token-dev": "prisma token --env-file .env",
     "token-prod": "prisma token --env-file .env.prod"

@@ -80,6 +80,7 @@ type Session {
   theme: String!
   start: String!
   end: String!
+  day: String!
   host: String
   speakers: [String!] @scalarList(strategy: RELATION)
   overview: String

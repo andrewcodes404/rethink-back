@@ -194,6 +194,31 @@ const Mutations = {
         return Session
     },
 
+    updateSession(parent, args, ctx, info) {
+        // first take a copy of the updates
+        const updates = { ...args }
+        // cannot update id so remove it ferom the COPY of our args
+        delete updates.id
+
+        // run the update method
+        //    one of our generated 👇  mutations
+        return ctx.db.mutation.updateSession(
+            {
+                data: {
+                    ...updates,
+                    speakers: { set: args.speakers },
+                    supporters: { set: args.supporters },
+                    sponsors: { set: args.sponsors },
+                },
+                where: {
+                    // we take the id directly from the args NOT from the COPY
+                    id: args.id,
+                },
+            },
+            info
+        )
+    },
+
     async createHostSpeaker(parent, args, ctx, info) {
         const HostSpeaker = await ctx.db.mutation.createHostSpeaker(
             {

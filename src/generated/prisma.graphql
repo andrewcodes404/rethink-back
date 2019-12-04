@@ -1,5 +1,5 @@
 # source: http://localhost:4467
-# timestamp: Tue Nov 19 2019 14:30:42 GMT+0000 (Greenwich Mean Time)
+# timestamp: Tue Dec 03 2019 08:21:09 GMT+0000 (Greenwich Mean Time)
 
 type AdvCom implements Node {
   id: ID!
@@ -1696,6 +1696,7 @@ type Session implements Node {
   theme: String!
   start: String!
   end: String!
+  day: String!
   host: String
   speakers: [String!]!
   overview: String
@@ -1720,6 +1721,7 @@ input SessionCreateInput {
   theme: String!
   start: String!
   end: String!
+  day: String!
   host: String
   overview: String
   learnings: String
@@ -1760,6 +1762,8 @@ enum SessionOrderByInput {
   start_DESC
   end_ASC
   end_DESC
+  day_ASC
+  day_DESC
   host_ASC
   host_DESC
   overview_ASC
@@ -1774,6 +1778,7 @@ type SessionPreviousValues {
   theme: String!
   start: String!
   end: String!
+  day: String!
   host: String
   speakers: [String!]!
   overview: String
@@ -1824,6 +1829,7 @@ input SessionUpdateInput {
   theme: String
   start: String
   end: String
+  day: String
   host: String
   overview: String
   learnings: String
@@ -1837,6 +1843,7 @@ input SessionUpdateManyMutationInput {
   theme: String
   start: String
   end: String
+  day: String
   host: String
   overview: String
   learnings: String
@@ -2066,6 +2073,46 @@ input SessionWhereInput {
 
   """All values not ending with the given string."""
   end_not_ends_with: String
+  day: String
+
+  """All values that are not equal to given value."""
+  day_not: String
+
+  """All values that are contained in given list."""
+  day_in: [String!]
+
+  """All values that are not contained in given list."""
+  day_not_in: [String!]
+
+  """All values less than the given value."""
+  day_lt: String
+
+  """All values less than or equal the given value."""
+  day_lte: String
+
+  """All values greater than the given value."""
+  day_gt: String
+
+  """All values greater than or equal the given value."""
+  day_gte: String
+
+  """All values containing the given string."""
+  day_contains: String
+
+  """All values not containing the given string."""
+  day_not_contains: String
+
+  """All values starting with the given string."""
+  day_starts_with: String
+
+  """All values not starting with the given string."""
+  day_not_starts_with: String
+
+  """All values ending with the given string."""
+  day_ends_with: String
+
+  """All values not ending with the given string."""
+  day_not_ends_with: String
   host: String
 
   """All values that are not equal to given value."""
