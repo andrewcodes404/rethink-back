@@ -28,13 +28,14 @@ server.express.use((req, res, next) => {
 
 var allowedOrigin1 = process.env.FRONTEND_URL
 var allowedOrigin2 = process.env.FRONTEND_URL2
+var allowedOrigin3 = process.env.FRONTEND_URL3
 
 //using cors here to protect our endpoints
 server.start(
     {
         cors: {
             credentials: true,
-            origin: [allowedOrigin1, allowedOrigin2],
+            origin: [allowedOrigin1, allowedOrigin2, allowedOrigin3],
         },
     },
     // a fn that runs when the server spins

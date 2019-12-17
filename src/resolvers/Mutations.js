@@ -201,7 +201,7 @@ const Mutations = {
         delete updates.id
 
         // run the update method
-        //    one of our generated 👇  mutations
+        // one of our generated 👇 mutations
         return ctx.db.mutation.updateSession(
             {
                 data: {
