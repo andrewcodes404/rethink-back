@@ -376,6 +376,8 @@ type HostSpeaker implements Node {
   facebook: String!
   twitter: String!
   website: String!
+  frontpage: Boolean
+  index: Int!
 }
 
 """A connection to a list of items."""
@@ -399,6 +401,8 @@ input HostSpeakerCreateInput {
   facebook: String!
   twitter: String!
   website: String!
+  frontpage: Boolean
+  index: Int!
 }
 
 """An edge in a connection."""
@@ -432,6 +436,10 @@ enum HostSpeakerOrderByInput {
   twitter_DESC
   website_ASC
   website_DESC
+  frontpage_ASC
+  frontpage_DESC
+  index_ASC
+  index_DESC
 }
 
 type HostSpeakerPreviousValues {
@@ -446,6 +454,8 @@ type HostSpeakerPreviousValues {
   facebook: String!
   twitter: String!
   website: String!
+  frontpage: Boolean
+  index: Int!
 }
 
 type HostSpeakerSubscriptionPayload {
@@ -484,6 +494,8 @@ input HostSpeakerUpdateInput {
   facebook: String
   twitter: String
   website: String
+  frontpage: Boolean
+  index: Int
 }
 
 input HostSpeakerUpdateManyMutationInput {
@@ -497,6 +509,8 @@ input HostSpeakerUpdateManyMutationInput {
   facebook: String
   twitter: String
   website: String
+  frontpage: Boolean
+  index: Int
 }
 
 input HostSpeakerWhereInput {
@@ -803,6 +817,24 @@ input HostSpeakerWhereInput {
   website_ends_with: String
   """All values not ending with the given string."""
   website_not_ends_with: String
+  frontpage: Boolean
+  """All values that are not equal to given value."""
+  frontpage_not: Boolean
+  index: Int
+  """All values that are not equal to given value."""
+  index_not: Int
+  """All values that are contained in given list."""
+  index_in: [Int!]
+  """All values that are not contained in given list."""
+  index_not_in: [Int!]
+  """All values less than the given value."""
+  index_lt: Int
+  """All values less than or equal the given value."""
+  index_lte: Int
+  """All values greater than the given value."""
+  index_gt: Int
+  """All values greater than or equal the given value."""
+  index_gte: Int
 }
 
 input HostSpeakerWhereUniqueInput {

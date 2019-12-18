@@ -130,6 +130,8 @@ type Mutation {
         facebook: String
         twitter: String
         website: String
+        frontpage: Boolean
+        index: Int
     ): HostSpeaker!
 
     updateHostSpeaker(
@@ -144,6 +146,8 @@ type Mutation {
         facebook: String
         twitter: String
         website: String
+        frontpage: Boolean
+        index: Int
     ): HostSpeaker!
 
     deleteHostSpeaker(id: ID!): HostSpeaker!
@@ -159,9 +163,15 @@ type Query {
     partners(where: PartnerWhereInput, orderBy: PartnerOrderByInput): [Partner]!
     partner(where: PartnerWhereUniqueInput!): Partner
     # sessions(where: SesionWhereInput, orderBy: SesionOrderByInput): [Session]!
-    sessions(where: SessionWhereInput, orderBy: SessionOrderByInput!): [Session]!
+    sessions(
+        where: SessionWhereInput
+        orderBy: SessionOrderByInput!
+    ): [Session]!
     session(where: SessionWhereUniqueInput!): Session
 
-    hostSpeakers(where: HostSpeakerWhereInput, orderBy: HostSpeakerOrderByInput): [HostSpeaker]!
+    hostSpeakers(
+        where: HostSpeakerWhereInput
+        orderBy: HostSpeakerOrderByInput
+    ): [HostSpeaker]!
     hostSpeaker(where: HostSpeakerWhereUniqueInput!): HostSpeaker
 }
