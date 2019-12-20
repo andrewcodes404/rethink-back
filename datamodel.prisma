@@ -70,8 +70,9 @@ type HostSpeaker {
    facebook: String!
    twitter: String!
    website: String!
-    frontpage: Boolean
+  frontpage: Boolean
     index: Int!
+    logo: String!
   
 }
 

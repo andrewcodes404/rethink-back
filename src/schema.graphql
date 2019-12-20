@@ -132,6 +132,7 @@ type Mutation {
         website: String
         frontpage: Boolean
         index: Int
+        logo: String
     ): HostSpeaker!
 
     updateHostSpeaker(
@@ -148,6 +149,7 @@ type Mutation {
         website: String
         frontpage: Boolean
         index: Int
+        logo: String
     ): HostSpeaker!
 
     deleteHostSpeaker(id: ID!): HostSpeaker!

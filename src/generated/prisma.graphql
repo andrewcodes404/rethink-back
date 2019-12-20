@@ -1,5 +1,5 @@
 # source: http://localhost:4467
-# timestamp: Wed Dec 18 2019 11:32:32 GMT+0000 (Greenwich Mean Time)
+# timestamp: Fri Dec 20 2019 14:46:06 GMT+0000 (Greenwich Mean Time)
 
 type AdvCom implements Node {
   id: ID!
@@ -395,6 +395,7 @@ type HostSpeaker implements Node {
   website: String!
   frontpage: Boolean
   index: Int!
+  logo: String!
 }
 
 """A connection to a list of items."""
@@ -421,6 +422,7 @@ input HostSpeakerCreateInput {
   website: String!
   frontpage: Boolean
   index: Int!
+  logo: String!
 }
 
 """An edge in a connection."""
@@ -459,6 +461,8 @@ enum HostSpeakerOrderByInput {
   frontpage_DESC
   index_ASC
   index_DESC
+  logo_ASC
+  logo_DESC
 }
 
 type HostSpeakerPreviousValues {
@@ -475,6 +479,7 @@ type HostSpeakerPreviousValues {
   website: String!
   frontpage: Boolean
   index: Int!
+  logo: String!
 }
 
 type HostSpeakerSubscriptionPayload {
@@ -527,6 +532,7 @@ input HostSpeakerUpdateInput {
   website: String
   frontpage: Boolean
   index: Int
+  logo: String
 }
 
 input HostSpeakerUpdateManyMutationInput {
@@ -542,6 +548,7 @@ input HostSpeakerUpdateManyMutationInput {
   website: String
   frontpage: Boolean
   index: Int
+  logo: String
 }
 
 input HostSpeakerWhereInput {
@@ -1019,6 +1026,46 @@ input HostSpeakerWhereInput {
 
   """All values greater than or equal the given value."""
   index_gte: Int
+  logo: String
+
+  """All values that are not equal to given value."""
+  logo_not: String
+
+  """All values that are contained in given list."""
+  logo_in: [String!]
+
+  """All values that are not contained in given list."""
+  logo_not_in: [String!]
+
+  """All values less than the given value."""
+  logo_lt: String
+
+  """All values less than or equal the given value."""
+  logo_lte: String
+
+  """All values greater than the given value."""
+  logo_gt: String
+
+  """All values greater than or equal the given value."""
+  logo_gte: String
+
+  """All values containing the given string."""
+  logo_contains: String
+
+  """All values not containing the given string."""
+  logo_not_contains: String
+
+  """All values starting with the given string."""
+  logo_starts_with: String
+
+  """All values not starting with the given string."""
+  logo_not_starts_with: String
+
+  """All values ending with the given string."""
+  logo_ends_with: String
+
+  """All values not ending with the given string."""
+  logo_not_ends_with: String
 }
 
 input HostSpeakerWhereUniqueInput {
